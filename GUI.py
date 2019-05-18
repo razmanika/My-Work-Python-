@@ -11,14 +11,13 @@ class window(Frame):
         self.pack(fill = BOTH, expand=1)
         menu = Menu(self.master)
         self.master.config(menu=menu)
-        self.pack(fill = BOTH , expand =1)
         file = Menu(menu)
-        file.add_command(lable = 'Exit', command = self.client_exit)
-        menu.add_cascade(lable = 'File', menu = file)
-        edit = Menu(menu)
-        edit.add_command(lable = 'undo')
-        edit.add_command(lable = 'Edit', menu = edit)
+        file.add_command(label = 'Exit', command = self.client_exit)
 
+        menu.add_cascade(label = 'File', menu = file)
+        edit = Menu(menu)
+        edit.add_command(label = 'Undo')
+        menu.add_cascade(label = 'Edit', menu = edit)
 
         quitButton = Button(self,text = 'Exit', command = self.client_exit)
         quitButton.place(x=200,y=150)
@@ -31,6 +30,6 @@ class window(Frame):
         print('nikoloz razmadze')
 
 root = Tk()
-root.geometry('400x300')
+root.geometry('800x600')
 app = window(root)
 root.mainloop()
