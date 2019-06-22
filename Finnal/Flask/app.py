@@ -14,11 +14,13 @@ def translate():
     if request.method == 'POST':
         word = request.form['words']
         if word.lower() == 'georgia':
-            with open('/home/kokoi/Desktop/translate.txt', 'w') as f:
+            with open('translate.txt', 'w') as f:
                 f.write(word + ' - ' + str(d))
             return str(d)
         else:
             return "You Entered different word"
+
+
             
     return render_template('index.html')
 
